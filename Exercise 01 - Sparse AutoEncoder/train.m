@@ -68,7 +68,7 @@ theta = initializeParameters(hiddenSize, visibleSize);
 %  and/or lambda to zero may be helpful for debugging.)  However, in your 
 %  final submission of the visualized weights, please use parameters we 
 %  gave in Step 0 above.
-[cost, grad] = sparseAutoencoderCost(theta, visibleSize, hiddenSize, lambda, ...
+[cost, grad] = sparseAutoencoderCost_2(theta, visibleSize, hiddenSize, lambda, ...
                                      sparsityParam, beta, patches);
 
 %%======================================================================

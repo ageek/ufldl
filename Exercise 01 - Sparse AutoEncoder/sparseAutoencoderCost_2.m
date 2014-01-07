@@ -44,114 +44,31 @@ b2grad = zeros(size(b2));
 
 %data: Our 64x10000 matrix containing the training data.  So, data(:,i) is the i-th training example. 
 % for sparse auto-encoder output=input
-y = data';
+m = size(data, 2);
+a1 = data;		% 64 x 10000
+z2 = W1 * a1 + repmat(b1, 1, m);
+a2 =  sigmoid(z2);
+z3 = W2 * a2 + repmat(b2, 1, m);
+a3 = sigmoid(z3);
 
-% calculate a1 : size(data): 64x10000
-% input: 64 input units
-a1 = data';		% 10000x 64
-
-% size(W1) : 25 x 64
-% size(a2) : 10000x64   X 64x25  = 10000x25
-% include intercept term, to be added to each 25 columns 
-a2 =  sigmoid( bsxfun(@plus, b1',(a1*W1')) );
-
-
-%h_theta : predicted output, should be 10000 x64   = 10000x25   X 25x64
-% size(a2) : 10000x25 
-% size(W2): 64x25
-% include intercept term, to be added to each 64 columns 
-h_theta = sigmoid( bsxfun(@plus, b2', (a2 * W2')) );
-
-m = size(data,2);
-J_unreg = (1/m) * sumsqr(h_theta - data');
-
-regularization = (lambda/2) * ( sumsqr(W1) + sumsqr(W2) );
-J = J_unreg + regularization;
-
-cost = J;
-
-% calculate average activation: rho_hat
-a2_sum = zeros(1,25);
-for i=1:m;
-	a1 = data(:,i)';
-	a2 =  sigmoid( bsxfun(@plus, b1',(a1*W1')) );
-	a2_sum = a2_sum + a2;
-end;
-
-
-rho_hat = (1/m) * sum(a2_sum);	
 rho = sparsityParam;
-	
+rho_hat = (1/m) * sum(a2,2);
+J_unreg = (1/2*m) * sumsqr(a3 - data);
+regularization = (lambda/2) * ( sumsqr(W1) + sumsqr(W2) );
+sparse_penalty = kl(rho, rho_hat);
+cost = J_unreg + beta * sparse_penalty + regularization;
+
 % calculate KL-divergence term to be added to delta2
-kl_term = beta * ( -(rho/rho_hat) + (1-rho)/(1-rho_hat))	;
+kl_delta = beta * ( -(rho ./ rho_hat) + (1-rho) ./ (1-rho_hat))	;
+% size(delta3): 64x10000
+delta3 = (a3-data) .* sigmoidGradient(z3);
+% size(delta2) : 25x10000
+delta2 =  ((W2' * delta3) + repmat(kl_delta, 1, m)) .* sigmoidGradient(z2);
 
-% for accumulating deltas in each iteration
-% for W1 and W2
-DELTA_W1 = zeros(size(W1));
-DELTA_W2 = zeros(size(W2));
-% for b1 and b2
-DELTA_b1 = zeros(size(b1));
-DELTA_b2 = zeros(size(b2));
-
-for i=1:m;
-	%fprintf('Iteration %d\n',i);
-	% pick one example from X's 10000 entries
-	% a1:  1x64
-	% data: 64x10000
-	a1 = data(:,i)';
-	
-	% include intercept term, to be added to each of the 25 columns 
-	% size(W1) : 25 x 64
-	% size(b1): 25 x 1
-	% size(a2): 1x25
-	a2 =  sigmoid( bsxfun(@plus, b1',(a1*W1')) );
-	
-	% include intercept term, to be added to each of the 64 columns 
-	% size(W2): 64x25
-	% size(b2): 64 x 1
-	% h_theta = a3   % size: 1x64
-	a3 = sigmoid( bsxfun(@plus, b2', (a2 * W2')) );
-	
-	% calculate delta3 : 1 x 64
-	% a3 = a1 		%sparse auto-encoder
-	delta_3 = a3 - data(:,i)';
-	
-	% calculate deltas
-	% size(delta3 X W2) : 1x64 X 64x25 = 1x25
-	delta3_x_W2 = (delta_3 * W2) ;
-	
-	% also include KL-divergence term
-	delta3_x_W2 = bsxfun(@plus, delta3_x_W2, kl_term);
-	
-	%size(delta_2) = 1x25
-	delta_2 = delta3_x_W2 .* sigmoidGradient( bsxfun(@plus, b1',(a1*W1')) );
-
-	
-	% size(DELTA_W2): size(delta_3') * a2 = 64 x25
-	DELTA_W2 = DELTA_W2 + delta_3' * a2;
-	% size(DELTA_W1): 25 x 64
-	DELTA_W1 = DELTA_W1 + delta_2' * a1;
-	
-	% size(DELTA_b2): 64 x 1
-	DELTA_b2 = DELTA_b2 + delta_3';
-	% size(DELTA_b1): 25 x 1
-	DELTA_b1 = DELTA_b1 + delta_2';
-	
-end;
-
-
-% Actual Grad is DELTA * (1/m)
-W1grad = DELTA_W1 * ( 1/m);
-W2grad = DELTA_W2 * ( 1/m);
-
-b2grad = DELTA_b2 * ( 1/m);
-b1grad = DELTA_b1 * ( 1/m);
-
-size(W1grad);
-size(W2grad);
-size(b1grad);
-size(b2grad);
-
+W1grad = (delta2 * a1') * (1/m) + lambda * W1;
+W2grad = (delta3 * a2') * (1/m) + lambda * W2;
+b2grad = sum(delta3, 2) * (1/m);
+b1grad = sum(delta2, 2) * (1/m);
 
 %-------------------------------------------------------------------
 % After computing the cost and gradient, we will convert the gradients back
@@ -175,4 +92,8 @@ end
 function g = sigmoidGradient(z)
 	g = zeros(size(z));
 	g = sigmoid(z) .* ( 1- sigmoid(z));
+end
+
+function div = kl(r, rh)
+  div = sum(r .* log(r ./ rh) + (1-r) .* log( (1-r) ./ (1-rh)));
 end

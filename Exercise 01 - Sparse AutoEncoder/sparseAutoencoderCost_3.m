@@ -113,11 +113,9 @@ y = data;
 % Actual Grad is DELTA * (1/m)
 W1grad = (delta2 * a1') * (1/m) + lambda * W1;
 W2grad = (delta3 * a2') * (1/m) + lambda * W2;
-
 b2grad = sum(delta3, 2) * (1/m);
 b1grad = sum(delta2, 2) * (1/m);
-%W2grad = W2grad + lambda * W2;
-%W1grad = W1grad + lambda * W1;
+
 
 
 size(W1grad);
