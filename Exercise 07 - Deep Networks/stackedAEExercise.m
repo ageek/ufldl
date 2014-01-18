@@ -58,7 +58,7 @@ sae1Theta = initializeParameters(hiddenSizeL1, inputSize);
 
 
 %  Use minFunc to minimize the function
-maxIter = 5;
+maxIter = 100;
 sae1OptTheta = zeros(size(sae1Theta));
 addpath minFunc/
 options.Method = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
@@ -175,20 +175,25 @@ stackedAETheta = [ saeSoftmaxOptTheta ; stackparams ];
 %
 %
 
+% Pass the theta which is = [softmaxtehta(:), sae1theta(:), sae2theta(:)] where
+% each theta is already pre-trained and fine-tuned for corresponding
+% SAEncoder or SoftMax
+% We are going to use that theta as baseline[=stackedAETheta], and improve all the thetas
+% by running/fine-tuning all across the full network at one-go 
+% using stackedAECost .
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+lambda = 1e-4;
+addpath minFunc/
+options.Method = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
+                          % function. Generally, for minFunc to work, you
+                          % need a function pointer with two outputs: the
+                          % function value and the gradient. In our problem,
+                          % sparseAutoencoderCost.m satisfies this.
+options.maxIter = maxIter;	  % Maximum number of iterations of L-BFGS to run 
+options.display = 'on';
+[stackedAEOptTheta, cost] = minFunc( @(p) stackedAECost(p, inputSize, hiddenSizeL2, ...
+                                               numClasses, netconfig, lambda, ...
+                                               trainData, trainLabels), stackedAETheta, options);
 
 
 % -------------------------------------------------------------------------

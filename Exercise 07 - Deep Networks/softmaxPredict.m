@@ -15,9 +15,24 @@ pred = zeros(1, size(data, 2));
 %  Instructions: Compute pred using theta assuming that the labels start 
 %                from 1.
 
-M = exp(theta * data);
-M = bsxfun(@rdivide, M, sum(M));
-[p,pred] = max(M, [], 1);
+% sae part
+W1 = stack{1}.w;
+W2 = stack{2}.w;
+b1 = stack{1}.b;
+b2 = stack{2}.b;
+m = size(data, 2);
+a1 = data;		
+z2 = W1 * a1 + repmat(b1, 1, m);
+a2 =  sigmoid(z2);
+z3 = W2 * a2 + repmat(b2, 1, m);
+a3 = sigmoid(z3);
+
+% softmax part
+z4 = softmaxTheta * a3;
+a4 = exp(z4) ./ repmat(sum(exp(z4)), numClasses, 1);
+
+% prediction 
+[p,pred] = max(a4, [], 1);
 % ---------------------------------------------------------------------
 
 end
