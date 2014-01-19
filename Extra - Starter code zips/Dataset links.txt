@@ -1,0 +1,2 @@
+
+100 MB dataset for "Convolution & Pooling" exercise: http://ufldl.stanford.edu/wiki/resources/stlSubset.zip
