@@ -1,0 +1,274 @@
+>> cnnExercise
+
+Congratulations! Your convolution code passed the test.
+Congratulations! Your pooling code passed the test.
+Step 1: features 1 to 10
+Convolving and pooling train images
+Elapsed time is 60.255365 seconds.
+Convolving and pooling test images
+Elapsed time is 156.055966 seconds.
+Step 2: features 11 to 20
+Convolving and pooling train images
+Elapsed time is 216.852863 seconds.
+Convolving and pooling test images
+Elapsed time is 315.683701 seconds.
+Step 3: features 21 to 30
+Convolving and pooling train images
+Elapsed time is 377.753143 seconds.
+Convolving and pooling test images
+Elapsed time is 485.528211 seconds.
+Step 4: features 31 to 40
+Convolving and pooling train images
+Elapsed time is 548.243790 seconds.
+Convolving and pooling test images
+Elapsed time is 648.358703 seconds.
+Step 5: features 41 to 50
+Convolving and pooling train images
+Elapsed time is 709.978201 seconds.
+Convolving and pooling test images
+Elapsed time is 809.630151 seconds.
+Step 6: features 51 to 60
+Convolving and pooling train images
+Elapsed time is 869.758169 seconds.
+Convolving and pooling test images
+Elapsed time is 959.731034 seconds.
+Step 7: features 61 to 70
+Convolving and pooling train images
+Elapsed time is 1015.315210 seconds.
+Convolving and pooling test images
+Elapsed time is 1102.215270 seconds.
+Step 8: features 71 to 80
+Convolving and pooling train images
+Elapsed time is 1156.730358 seconds.
+Convolving and pooling test images
+Elapsed time is 1242.884003 seconds.
+Step 9: features 81 to 90
+Convolving and pooling train images
+Elapsed time is 1296.839463 seconds.
+Convolving and pooling test images
+Elapsed time is 1382.711241 seconds.
+Step 10: features 91 to 100
+Convolving and pooling train images
+Elapsed time is 1435.511757 seconds.
+Convolving and pooling test images
+Elapsed time is 1520.171991 seconds.
+Step 11: features 101 to 110
+Convolving and pooling train images
+Elapsed time is 1573.570871 seconds.
+Convolving and pooling test images
+Elapsed time is 1660.790105 seconds.
+Step 12: features 111 to 120
+Convolving and pooling train images
+Elapsed time is 1715.247522 seconds.
+Convolving and pooling test images
+Elapsed time is 1800.807753 seconds.
+Step 13: features 121 to 130
+Convolving and pooling train images
+Elapsed time is 1853.930101 seconds.
+Convolving and pooling test images
+Elapsed time is 1938.915552 seconds.
+Step 14: features 131 to 140
+Convolving and pooling train images
+Elapsed time is 1993.468168 seconds.
+Convolving and pooling test images
+Elapsed time is 2078.130739 seconds.
+Step 15: features 141 to 150
+Convolving and pooling train images
+Elapsed time is 2132.358446 seconds.
+Convolving and pooling test images
+Elapsed time is 2218.866587 seconds.
+Step 16: features 151 to 160
+Convolving and pooling train images
+Elapsed time is 2272.381202 seconds.
+Convolving and pooling test images
+Elapsed time is 2359.224193 seconds.
+Step 17: features 161 to 170
+Convolving and pooling train images
+Elapsed time is 2413.868443 seconds.
+Convolving and pooling test images
+Elapsed time is 2497.876563 seconds.
+Step 18: features 171 to 180
+Convolving and pooling train images
+Elapsed time is 2551.402964 seconds.
+Convolving and pooling test images
+Elapsed time is 2636.579189 seconds.
+Step 19: features 181 to 190
+Convolving and pooling train images
+Elapsed time is 2692.786467 seconds.
+Convolving and pooling test images
+Elapsed time is 2779.682496 seconds.
+Step 20: features 191 to 200
+Convolving and pooling train images
+Elapsed time is 2835.954325 seconds.
+Convolving and pooling test images
+Elapsed time is 2920.970012 seconds.
+Step 21: features 201 to 210
+Convolving and pooling train images
+Elapsed time is 2975.246414 seconds.
+Convolving and pooling test images
+Elapsed time is 3060.425730 seconds.
+Step 22: features 211 to 220
+Convolving and pooling train images
+Elapsed time is 3113.530119 seconds.
+Convolving and pooling test images
+Elapsed time is 3200.182877 seconds.
+Step 23: features 221 to 230
+Convolving and pooling train images
+Elapsed time is 3266.022329 seconds.
+Convolving and pooling test images
+Elapsed time is 3367.124175 seconds.
+Step 24: features 231 to 240
+Convolving and pooling train images
+Elapsed time is 3441.034426 seconds.
+Convolving and pooling test images
+Elapsed time is 3541.800917 seconds.
+Step 25: features 241 to 250
+Convolving and pooling train images
+Elapsed time is 3605.079371 seconds.
+Convolving and pooling test images
+Elapsed time is 3691.858549 seconds.
+Step 26: features 251 to 260
+Convolving and pooling train images
+Elapsed time is 3744.737540 seconds.
+Convolving and pooling test images
+Elapsed time is 3826.977156 seconds.
+Step 27: features 261 to 270
+Convolving and pooling train images
+Elapsed time is 3877.680472 seconds.
+Convolving and pooling test images
+Elapsed time is 3958.968154 seconds.
+Step 28: features 271 to 280
+Convolving and pooling train images
+Elapsed time is 4010.314145 seconds.
+Convolving and pooling test images
+Elapsed time is 4092.175762 seconds.
+Step 29: features 281 to 290
+Convolving and pooling train images
+Elapsed time is 4142.750045 seconds.
+Convolving and pooling test images
+Elapsed time is 4224.408457 seconds.
+Step 30: features 291 to 300
+Convolving and pooling train images
+Elapsed time is 4275.499144 seconds.
+Convolving and pooling test images
+Elapsed time is 4356.803746 seconds.
+Step 31: features 301 to 310
+Convolving and pooling train images
+Elapsed time is 4407.904311 seconds.
+Convolving and pooling test images
+Elapsed time is 4489.245766 seconds.
+Step 32: features 311 to 320
+Convolving and pooling train images
+Elapsed time is 4539.553647 seconds.
+Convolving and pooling test images
+Elapsed time is 4621.582481 seconds.
+Step 33: features 321 to 330
+Convolving and pooling train images
+Elapsed time is 4672.163402 seconds.
+Convolving and pooling test images
+Elapsed time is 4751.898462 seconds.
+Step 34: features 331 to 340
+Convolving and pooling train images
+Elapsed time is 4801.446842 seconds.
+Convolving and pooling test images
+Elapsed time is 4881.673390 seconds.
+Step 35: features 341 to 350
+Convolving and pooling train images
+Elapsed time is 4932.206870 seconds.
+Convolving and pooling test images
+Elapsed time is 5013.464963 seconds.
+Step 36: features 351 to 360
+Convolving and pooling train images
+Elapsed time is 5064.988066 seconds.
+Convolving and pooling test images
+Elapsed time is 5146.102682 seconds.
+Step 37: features 361 to 370
+Convolving and pooling train images
+Elapsed time is 5197.501356 seconds.
+Convolving and pooling test images
+Elapsed time is 5280.493355 seconds.
+Step 38: features 371 to 380
+Convolving and pooling train images
+Elapsed time is 5330.781521 seconds.
+Convolving and pooling test images
+Elapsed time is 5410.511949 seconds.
+Step 39: features 381 to 390
+Convolving and pooling train images
+Elapsed time is 5459.882896 seconds.
+Convolving and pooling test images
+Elapsed time is 5540.979431 seconds.
+Step 40: features 391 to 400
+Convolving and pooling train images
+Elapsed time is 5591.655022 seconds.
+Convolving and pooling test images
+Elapsed time is 5675.204749 seconds.
+Elapsed time is 5685.719517 seconds.
+ Iteration   FunEvals     Step Length    Function Val        Opt Cond
+         1          4     6.80010e+00     1.28116e+00     3.86898e+01
+         2          5     1.00000e+00     1.12817e+00     3.03350e+01
+         3          6     1.00000e+00     9.35780e-01     2.75523e+01
+         4          7     1.00000e+00     8.57186e-01     1.99068e+01
+         5          8     1.00000e+00     8.22929e-01     3.96276e+00
+         6          9     1.00000e+00     8.15715e-01     3.99009e+00
+         7         10     1.00000e+00     7.97532e-01     3.72813e+00
+         8         11     1.00000e+00     6.75185e-01     3.25919e+00
+         9         12     1.00000e+00     5.98162e-01     3.04387e+00
+        10         13     1.00000e+00     5.69339e-01     1.41696e+00
+        11         14     1.00000e+00     5.51755e-01     1.37354e+00
+        12         15     1.00000e+00     5.38298e-01     1.52399e+00
+        13         16     1.00000e+00     5.27789e-01     7.82732e-01
+        14         17     1.00000e+00     5.18344e-01     1.21684e+00
+        15         18     1.00000e+00     5.10143e-01     1.64368e+00
+        16         19     1.00000e+00     4.98709e-01     1.41994e+00
+        17         20     1.00000e+00     4.92327e-01     3.02261e+00
+        18         21     1.00000e+00     4.87471e-01     9.12854e-01
+        19         22     1.00000e+00     4.85578e-01     5.73225e-01
+        20         23     1.00000e+00     4.84687e-01     6.33161e-01
+        21         24     1.00000e+00     4.81124e-01     5.86048e-01
+        22         25     1.00000e+00     4.76856e-01     8.73462e-01
+        23         26     1.00000e+00     4.74540e-01     4.36777e-01
+        24         27     1.00000e+00     4.73690e-01     4.17469e-01
+        25         28     1.00000e+00     4.72573e-01     3.57979e-01
+        26         29     1.00000e+00     4.71306e-01     2.55460e-01
+        27         30     1.00000e+00     4.70255e-01     1.83431e-01
+        28         31     1.00000e+00     4.69384e-01     1.62790e-01
+        29         32     1.00000e+00     4.68788e-01     2.15070e-01
+        30         33     1.00000e+00     4.68467e-01     1.59273e-01
+        31         34     1.00000e+00     4.68245e-01     1.06507e-01
+        32         35     1.00000e+00     4.68147e-01     7.18219e-02
+        33         36     1.00000e+00     4.68031e-01     8.40886e-02
+        34         37     1.00000e+00     4.67937e-01     6.34518e-02
+        35         38     1.00000e+00     4.67872e-01     6.61024e-02
+        36         39     1.00000e+00     4.67834e-01     5.37937e-02
+        37         40     1.00000e+00     4.67806e-01     5.98058e-02
+        38         41     1.00000e+00     4.67779e-01     4.44916e-02
+        39         42     1.00000e+00     4.67750e-01     3.42283e-02
+        40         43     1.00000e+00     4.67733e-01     3.29770e-02
+        41         44     1.00000e+00     4.67726e-01     2.21509e-02
+        42         45     1.00000e+00     4.67721e-01     1.75688e-02
+        43         46     1.00000e+00     4.67716e-01     1.64807e-02
+        44         47     1.00000e+00     4.67712e-01     1.33467e-02
+        45         48     1.00000e+00     4.67708e-01     1.30968e-02
+        46         49     1.00000e+00     4.67707e-01     9.64775e-03
+        47         50     1.00000e+00     4.67706e-01     7.88647e-03
+        48         51     1.00000e+00     4.67705e-01     7.51238e-03
+        49         52     1.00000e+00     4.67705e-01     5.06369e-03
+        50         53     1.00000e+00     4.67704e-01     4.50736e-03
+        51         54     1.00000e+00     4.67704e-01     6.16187e-03
+        52         55     1.00000e+00     4.67704e-01     2.09244e-03
+        53         56     1.00000e+00     4.67704e-01     1.62250e-03
+        54         57     1.00000e+00     4.67704e-01     2.60637e-03
+        55         58     1.00000e+00     4.67704e-01     2.70023e-03
+        56         59     1.00000e+00     4.67703e-01     1.46003e-03
+        57         60     1.00000e+00     4.67703e-01     8.83785e-04
+        58         61     1.00000e+00     4.67703e-01     6.30577e-04
+        59         62     1.00000e+00     4.67703e-01     9.87393e-04
+        60         63     1.00000e+00     4.67703e-01     7.67873e-04
+        61         64     1.00000e+00     4.67703e-01     4.15109e-04
+        62         65     1.00000e+00     4.67703e-01     3.06349e-04
+        63         66     1.00000e+00     4.67703e-01     3.62327e-04
+        64         67     1.00000e+00     4.67703e-01     2.20326e-04
+        65         68     1.00000e+00     4.67703e-01     1.69620e-04
+Directional Derivative below TolX
+Accuracy: 80.438%
+>> 
