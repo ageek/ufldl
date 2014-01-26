@@ -162,6 +162,10 @@ pooledFeaturesTest = zeros(hiddenSize, numTestImages, ...
     floor((imageDim - patchDim + 1) / poolDim), ...
     floor((imageDim - patchDim + 1) / poolDim) );
 
+fprintf('num of training images: %d', numTrainImages);
+size(trainImages)	; % 64          64           3        2000
+fprintf('num of test images: %d\n', numTestImages);
+size(testImages)	; % 64          64           3        3200
 tic();
 
 % comment the block
@@ -202,7 +206,10 @@ end
 toc();
 
 % Load the pre computed pooling data
-load('cnnPooledFeatures.mat');
+load('cnnPooledFeatures.mat');	
+% size(convolvedFeatures)       400     8    57    57
+% size(pooledFeaturesTrain)		400        2000           3           3
+% size(pooledFeaturesTest)		400        3200           3           3
 
 
 %%======================================================================
@@ -219,9 +226,9 @@ load('cnnPooledFeatures.mat');
 softmaxLambda = 1e-4;
 numClasses = 4;
 % Reshape the pooledFeatures to form an input vector for softmax
-softmaxX = permute(pooledFeaturesTrain, [1 3 4 2]);
+softmaxX = permute(pooledFeaturesTrain, [1 3 4 2]);		
 softmaxX = reshape(softmaxX, numel(pooledFeaturesTrain) / numTrainImages,...
-    numTrainImages);
+    numTrainImages);	% 3600        2000
 softmaxY = trainLabels;
 
 options = struct;
@@ -235,7 +242,7 @@ softmaxModel = softmaxTrain(numel(pooledFeaturesTrain) / numTrainImages,...
 
 softmaxX = permute(pooledFeaturesTest, [1 3 4 2]);
 softmaxX = reshape(softmaxX, numel(pooledFeaturesTest) / numTestImages, numTestImages);
-softmaxY = testLabels;
+softmaxY = testLabels;	% 3600        3200
 
 [pred] = softmaxPredict(softmaxModel, softmaxX);
 acc = (pred(:) == softmaxY(:));
